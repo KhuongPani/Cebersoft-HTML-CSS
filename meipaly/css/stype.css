@@ -4,6 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Oswald", sans-serif;
+    
   }
   
   .container {
@@ -26,7 +27,11 @@
   
   header {
     padding: 20px 0;
-    background-color: black;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.66);
   }
   
   header .header_content a {
@@ -44,57 +49,212 @@
   header nav li a:hover{
     color: red;
   }
-  .demo5 {
-    background-color: black;
-    width: 100%;
-  }
-  
-  .flex_container {
-    background-color: black;
-    height: 100vh;
-    /* height: 200px; */
-    /* khi sử dụng flex sẽ có 2 trục là trục chính (mặc định ban đầu là trục ngang) và trục phụ (mặc định ban đầu là trục dọc) */
+  .banner{
+    background-image: url(../img/image-video/home_slider.jpg);
+    height: 80vh;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
-    /* thuộc tính điều chỉnh các phần tử dựa trên trục chính  */
-    /* justify-content: center; */
-    /* justify-content: space-between; */
-    /* justify-content: flex-end; */
-    /* justify-content: space-evenly; */
-    /* justify-content: space-around; */
-  
-    /* thuộc tính điều chỉnh các phần tử theo chiều dọc (trục phụ) */
-    /* align-items: flex-end; */
-    /* align-items: center; */
-    /* align-items: flex-start; */
-    /* align-items: ; */
-  
-    /* thay đổi trục chính của flex box  */
-    /* flex-direction: row-reverse; */
-    /* flex-direction: column; */
-    /* flex-direction: column-reverse; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: aliceblue;
   }
+.banner .banner_subtitle{
+  font-size: 25px;
+}
+.banner h1{
+  font-size: 75px;
+  line-height: 85px;
+}
+.banner button{
+  padding: 15px 20px;
+  color: aliceblue;
+  text-transform: uppercase;
+  background-color: rgb(168, 43, 43);
+  border: 2px solid red;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.banner button:hover {
+  background-color: #af2238;
+}
+
+.service {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 20px 0;
+}
+
+.service .item_bg {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 250px;
+  position: relative;
+}
+
+.service .service_item {
+  padding: 0 15px;
+}
+
+.service .slick-dots li button:before {
+  font-size: 15px;
+  color: aliceblue;
+}
+
+.service .slick-dots li.slick-active button:before {
+  color: #e62b4a;
+}
+
+.service .service_item .item_bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height:0%;
+  width: 5px;
+  background-color: #e62b4a;
+}
+.service .service_item .item_bg:hover::before {
+  height: 100%;
+  transition: all 0.5s;
+}
+
+
+/* css blog  */
+.blog .blog_content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  /* grid-template-columns: 1fr 2fr repeat(2, 1fr); */
+}
+
+.blog .blog_content .blog_item img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  filter: grayscale(0.5) contrast(0.7);
+  /* padding: 10px; */
+}
+
+.blog .blog_item:first-child {
   
-  .flex_item1 {
-    width: 200px;
-    height: 200px;
-    background-color: red;
-  }
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+.blog .blog_item:last-child {
+  grid-column:  3/ span 2;
+  grid-row: 3 / span 2;
   
-  .flex_item2 {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-  }
-  
-  .flex_item3 {
-    width: 200px;
-    height: 200px;
-    background-color: purple;
-  }
-  
-  .flex_item4 {
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
-  }
-  
+}
+
+.blog .blog_content .blog_item {
+  /* padding: 10px; */
+  position: relative;
+}
+.blog .blog_item .overlay {
+  position: absolute;
+  background-color: #e62b4a84;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  /* right: 0;
+  bottom: 0; */
+}
+
+.blog .blog_item .overlay .overlay_icon {
+  text-align: right;
+}
+
+.blog .blog_content .blog_item .overlay .overlay_icon i {
+  background-color: white;
+  padding: 15px;
+}
+.demo5 {
+  background-color: black;
+  width: 100%;
+}
+
+.demo_before_after {
+  padding: 50px 0;
+  background-color: blue;
+  position: relative;
+}
+
+.demo_before_after::before {
+  content: "";
+  /* color: red; */
+  background-color: #e62b4a;
+  /* width: 4px;
+  height: 100%; */
+  display: block;
+  position: absolute;
+  /* right: 0; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* left: 0;
+  width: 100%;
+  height: 100%; */
+}
+
+.flex_container {
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+  /* height: 200px; */
+  /* khi sử dụng flex sẽ có 2 trục là trục chính (mặc định ban đầu là trục ngang) và trục phụ (mặc định ban đầu là trục dọc) */
+  display: flex;
+  /* thuộc tính điều chỉnh các phần tử dựa trên trục chính  */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  /* justify-content: flex-end; */
+  /* justify-content: space-evenly; */
+  /* justify-content: space-around; */
+
+  /* thuộc tính điều chỉnh các phần tử theo chiều dọc (trục phụ) */
+  /* align-items: flex-end; */
+  /* align-items: center; */
+  /* align-items: flex-start; */
+  /* align-items: ; */
+
+  /* thay đổi trục chính của flex box  */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column; */
+  /* flex-direction: column-reverse; */
+}
+
+.flex_item1 {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.flex_item2 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+.flex_item3 {
+  width: 200px;
+  height: 200px;
+  background-color: purple;
+}
+
+.flex_item4 {
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+}
