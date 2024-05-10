@@ -36,7 +36,7 @@ a {
     padding: 20px 35px;
     font-size: 15px;
     font-weight: 500;
-    background-image: linear-gradient(to right, #f55f8d 0, #f8ae56 51%, #f55f8d 100%);
+    background-image: linear-gradient(to right, #7aea78 0, #f8eb56 51%, #5ff5f5 100%);
     background-size: 200%;
     border: 1px solid transparent;
     transition: all 0.5s;
@@ -1114,7 +1114,7 @@ footer::before {
 
 
 /* KEYFRAMES */
-@keyframes upToDown {
+/* @keyframes upToDown {
     49% {
         transform: translateY(100%);
     }
@@ -1157,4 +1157,4 @@ footer::before {
     51% {
         opacity: 1;
     }
-}
+} */

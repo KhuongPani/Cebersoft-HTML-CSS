@@ -1,97 +1,104 @@
 /* reset css  */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Oswald", sans-serif;
-    
-  }
-  
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-  }
-  
-  header .header_content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  header .header_content nav ul li {
-    display: inline;
-    margin-right: 25px;
-    font-size: 17px;
-    text-transform: uppercase;
-  }
-  
-  header {
-    padding: 20px 0;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.66);
-  }
-  
-  header .header_content a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.5s;
-  }
-  
-  header .header_logo {
-    font-size: 32px;
-  }
-  header ul li .active{
-    color: red;
-  }
-  header nav li a:hover{
-    color: red;
-  }
-  .banner{
-    background-image: url(../img/image-video/home_slider.jpg);
-    height: 80vh;
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color: aliceblue;
-  }
-.banner .banner_subtitle{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+header .header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .header_content nav ul li {
+  display: inline;
+  margin-right: 25px;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+header {
+  padding: 20px 0;
+  position: absolute;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.311);
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+
+header .header_content a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s;
+}
+
+header .header_logo {
+  font-size: 32px;
+}
+
+header nav li .active {
+  color: #e62b4a;
+}
+
+header nav li a:hover {
+  color: #e62b4a;
+}
+
+.banner {
+  background-image: url(./../img/image-video/home_slider.jpg);
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* Cách dùng flex box để canh giữa nội dung bên trong theo chiều ngang và dọc  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.banner .banner_subtitle {
   font-size: 25px;
 }
-.banner h1{
+
+.banner h1 {
   font-size: 75px;
   line-height: 85px;
 }
-.banner button{
-  padding: 15px 20px;
-  color: aliceblue;
+
+.banner button {
+  padding: 10px 30px;
+  color: rgb(46, 45, 45);
   text-transform: uppercase;
-  background-color: rgb(168, 43, 43);
-  border: 2px solid red;
+  background-color: #e62b4a;
+  border: 2px solid #e62b4a;
   transition: all 0.5s;
   cursor: pointer;
 }
+
 .banner button:hover {
-  background-color: #af2238;
+  background-color: #e71131ec;
 }
 
 .service {
   background-color: rgb(0, 0, 0);
-  color: white;
+  color: rgb(179, 175, 175);
   padding: 20px 0;
 }
 
 .service .item_bg {
-  background-color: white;
-  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  color: rgb(220, 214, 214);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,11 +114,11 @@
 
 .service .slick-dots li button:before {
   font-size: 15px;
-  color: aliceblue;
+  background-color: rgb(0, 0, 0);
 }
 
 .service .slick-dots li.slick-active button:before {
-  color: #e62b4a;
+  color: #e62b4ab0;
 }
 
 .service .service_item .item_bg::before {
@@ -119,47 +126,39 @@
   position: absolute;
   top: 0;
   right: 0;
-  height:0%;
+  height: 0;
   width: 5px;
   background-color: #e62b4a;
 }
+
 .service .service_item .item_bg:hover::before {
   height: 100%;
   transition: all 0.5s;
 }
-
+/* .service .service_item .item_bg::before:hover */
 
 /* css blog  */
 .blog .blog_content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
   /* grid-template-columns: 1fr 2fr repeat(2, 1fr); */
+  gap: 30px;
 }
 
 .blog .blog_content .blog_item img {
   width: 100%;
   height: 100%;
-  object-fit:cover;
-  filter: grayscale(0.5) contrast(0.7);
-  /* padding: 10px; */
-}
-
-.blog .blog_item:first-child {
-  
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-}
-.blog .blog_item:last-child {
-  grid-column:  3/ span 2;
-  grid-row: 3 / span 2;
-  
+  object-fit: cover;
+  filter: grayscale(0.6) contrast(0.7);
+  /* filter : brightness(); */
 }
 
 .blog .blog_content .blog_item {
   /* padding: 10px; */
   position: relative;
+  overflow: hidden;
 }
+
 .blog .blog_item .overlay {
   position: absolute;
   background-color: #e62b4a84;
@@ -171,22 +170,172 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 25px;
+  opacity: 0;
+  transition: all 0.7s;
   /* right: 0;
   bottom: 0; */
+}
+
+.blog .blog_item:hover .overlay {
+  opacity: 0.5;
 }
 
 .blog .blog_item .overlay .overlay_icon {
   text-align: right;
 }
 
-.blog .blog_content .blog_item .overlay .overlay_icon i {
+.blog  .blog_item .overlay .overlay_icon i {
   background-color: white;
   padding: 15px;
+  transform: translateY(30px) rotate(45deg);
+  transition: all 0.5s;
+}
+
+.blog .blog_item:hover .overlay_icon i {
+  transform: translateY(0px) rotate(45deg);
+}
+
+.blog .blog_item .overlay_text {
+  transform: translateY(80px);
+  transition: all 0.5s;
+}
+
+.blog .blog_item:hover .overlay_text {
+  transform: translateY(0px);
+}
+
+.blog .blog_item:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.blog .blog_item:last-child {
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+}
+/* number  */
+.number {
+  padding: 50px 0;
+  background-color: black;
+  color: white;
+}
+
+.number .number_content {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.number .number_content p {
+  font-size: 60px;
+}
+
+.digital {
+  /* background-color: black; */
+  background-image: url(../img/image-video/bussiness_img_1.jpg);
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact_title{
+  text-align: center;
+  color: #888888;
+  font-weight: 400;
+}
+.contact_title h2{
+  font-size: 50px;
+  font-weight: 400;
+}
+/* CONTACT */
+.contact {
+  padding: 100px 0;
+}
+
+.contact_content {
+  width: 70%;
+  margin: 30px auto 0;
+  align-items: center;
+  display: flex;
+}
+
+.content_left {
+  width: 60%;
+  
+}
+
+.content_left iframe {
+  width: 100%;
+}
+
+.content_right {
+  width: 40%;
+  
+}
+
+.content_right form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+
+.content_right input,
+.content_right textarea {
+  font-size: 15px;
+  padding: 1em;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  width: 100%; /* Đảm bảo các input và textarea chiếm toàn bộ chiều rộng của .content_right */
+}
+.btnMei{
+  background-color: #000000;
+  color: white;
 }
 .demo5 {
   background-color: black;
   width: 100%;
 }
+
+
+/* FOOTER */
+footer{
+  background-color: #000;
+}
+.footer__content{
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+}
+
+.footer__content p{
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.footer__content a{
+  width: 54px;
+  height: 54px;
+  display: inline-block;
+  border-radius: 50%;
+  line-height: 54px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  margin-left: 5px;
+  text-decoration: none;
+  color: #ffffff;
+
+  transition: all .5s;
+}
+.footer__content a:hover{
+  background-color: #e62b4a;
+}
+
 
 .demo_before_after {
   padding: 50px 0;
@@ -211,7 +360,7 @@
 }
 
 .flex_container {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
   height: 100vh;
   /* height: 200px; */
   /* khi sử dụng flex sẽ có 2 trục là trục chính (mặc định ban đầu là trục ngang) và trục phụ (mặc định ban đầu là trục dọc) */
